@@ -4,12 +4,13 @@
 int main(void)
 {
     int j, max, vCount=0, len=0, maxInd, mudou=0;
-    int p[1000000];
+    int * p = NULL;
     char c;
     while((c = getchar()) != 'f')
     {
         if (c == 'c')
         {
+			p = realloc(p, (len + 1) * sizeof(int));
             scanf("%d", &p[len]);
             ++len;
         }
@@ -42,5 +43,6 @@ int main(void)
             vCount++;
         }
     }
+    free(p);
     return 0;
 }
